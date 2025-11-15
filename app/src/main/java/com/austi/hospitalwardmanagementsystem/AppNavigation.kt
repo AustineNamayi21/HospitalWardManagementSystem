@@ -12,25 +12,29 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "home"
+        startDestination = Screen.Home.route
     ) {
-        composable("home") {
+        composable(Screen.Home.route) {
             HomeScreen(navController)
         }
-        composable("patients") {
+        composable(Screen.PatientList.route) {
             PatientListScreen(
-                onAddPatient = { navController.navigate("addPatient") },
-                onViewWards = { navController.navigate("wards") }
+                onAddPatient = { navController.navigate(Screen.AddPatient.route) },
+                onViewWards = { navController.navigate(Screen.WardManagement.route) },
+                navController = navController
             )
         }
-        composable("addPatient") {
+        composable(Screen.AddPatient.route) {
             AddPatientScreen(navController)
         }
-        composable("wards") {
+        composable(Screen.WardManagement.route) {
             WardManagementScreen(navController)
         }
-        composable("addWard") {
+        composable(Screen.AddWard.route) {
             AddWardScreen(navController)
+        }
+        composable(Screen.Analytics.route) { // MOVED THIS OUTSIDE - it was nested!
+            AnalyticsScreen(navController)
         }
     }
 }

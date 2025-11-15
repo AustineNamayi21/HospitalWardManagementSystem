@@ -91,4 +91,15 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("com.google.android.material:material:1.11.0")
+    // ... your existing dependencies
+
+    // Compose ViewModel integration
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
+    // If you don't have these, add them too:
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+
+    // Make sure you have the core Compose dependencies:
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.1") // if using LiveData
 }

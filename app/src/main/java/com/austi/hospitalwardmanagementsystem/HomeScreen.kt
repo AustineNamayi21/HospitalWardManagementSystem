@@ -52,6 +52,14 @@ fun HomeScreen(navController: NavHostController) {
         )
 
         Spacer(modifier = Modifier.height(32.dp))
+        // Add this button in the HomeScreen after the existing buttons
+        HomeScreenButton(
+            text = "Analytics Dashboard",
+            onClick = { navController.navigate("analytics") }
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
 
         // Quick Access Section
         Card(
